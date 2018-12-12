@@ -5,7 +5,7 @@ import WebRTCView from "./components/WebRTCView";
 import Status from "./components/Status";
 
 let InitiatorComponent;
-let _chatChannel;
+let chatChannel;
 
 const configuration = { iceServers: [{ urls: [] }] };
 const pc = new RTCPeerConnection(configuration);
@@ -29,8 +29,8 @@ pc.onicecandidate = async ({ candidate }) => {
 };
 
 function createOffer() {
-  _chatChannel = pc.createDataChannel("chatChannel");
-  chatChannel(_chatChannel);
+  chatChannel = pc.createDataChannel("chatChannel");
+  channel(chatChannel);
 
   pc.createOffer()
     .then(offer => pc.setLocalDescription(offer))
@@ -42,14 +42,14 @@ function createOffer() {
     .catch(InitiatorComponent.logError);
 }
 
-function chatChannel() {
-  _chatChannel.onopen = function(e) {
+function channel() {
+  chatChannel.onopen = function(e) {
     console.log("chat channel is open", e);
   };
-  _chatChannel.onmessage = function(e) {
+  chatChannel.onmessage = function(e) {
     console.log(e);
   };
-  _chatChannel.onclose = function() {
+  chatChannel.onclose = function() {
     console.log("chat channel closed");
   };
 }

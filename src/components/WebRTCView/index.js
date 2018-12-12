@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, Button, TextInput } from "react-native";
+import { StyleSheet, View, Button, TextInput } from "react-native-web";
 
 const WebRTCView = ({
   streamURL,

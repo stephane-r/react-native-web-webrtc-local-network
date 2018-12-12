@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native-web";
 
 const Status = ({ text, isTrue }) => (
   <View style={styles.container}>
@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     padding: 5
   },
   textGreen: {
-    color: 'green'
+    color: "green"
   },
   textRed: {
-    color: 'red'
+    color: "red"
   }
 });
 

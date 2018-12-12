@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native-web";
 
 const ConnectionState = ({ text }) => (
   <View style={styles.container}>
@@ -10,17 +10,17 @@ const ConnectionState = ({ text }) => (
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center'
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center"
   },
   textAlert: {
-    textAlign: 'center',
+    textAlign: "center",
     padding: 10,
-    color: 'red'
+    color: "red"
   },
   textSuccess: {
-    color: 'green'
+    color: "green"
   }
 });
 
